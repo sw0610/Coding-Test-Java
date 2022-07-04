@@ -1,0 +1,52 @@
+package practice1;
+
+import java.util.Scanner;
+
+public class prac {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int T;
+		T=sc.nextInt();
+		/*
+		   여러 개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
+		*/
+
+		for(int test_case = 1; test_case <= T; test_case++)
+		{
+            
+            int n=sc.nextInt();
+            int m=sc.nextInt();
+            
+            int[] Ai=new int[n];
+            int[] Bj=new int[m];
+            
+            for(int i=0;i<n;i++){ Ai[i]=sc.nextInt();}
+            for(int i=0;i<m;i++){ Bj[i]=sc.nextInt();}
+            
+            int max=0;
+            
+            int[] mx;
+           	int[] mn;
+            
+            if(n>m){
+                mx=Ai;
+                mn=Bj;
+            }else{
+                mx=Bj;
+                mn=Ai;
+            }
+            
+            for (int i=0; i<=mx.length-mn.length;i++){
+                int res=0;
+
+                for(int j=0;j<mn.length;j++){
+                	
+                	System.out.println(mx[j+i]);
+                    res=mn[j]*mx[j+i];
+                }
+                max=Math.max(res, max);
+            }
+			System.out.println("#"+test_case+" "+max);
+		}
+	}
+}

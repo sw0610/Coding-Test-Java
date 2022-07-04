@@ -1,0 +1,9 @@
+package rotatearray;
+
+import java.util.Scanner;
+
+public class rotatearray {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+	}
+}
